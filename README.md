@@ -1,12 +1,12 @@
 #  DNA BLAST Search Tool (Biopython)
 
-This is a simple Python script that performs a BLAST (Basic Local Alignment Search Tool) search using a DNA sequence from a FASTA file. It uses Biopython(https://biopython.org/) to send a query to the NCBI BLAST API and parse the results.
+This is a simple Python script that performs a BLAST (Basic Local Alignment Search Tool) search using a DNA sequence from a FASTA file. It uses Biopython(https://biopython.org/) to send a query to the NCBI BLAST API and then parse the results.
 
 ---
 
 ##  Project Background
 
-I first learned about bioinformatics during my biomedical science degree and became fascinated with how tools like BLAST help identify genetic sequences. I’ve continued developing my coding skills post-graduation, and this tool is part of that journey.
+I first learnt about bioinformatics during my biomedical science degree and became fascinated with how tools like BLAST help identify genetic sequences. I’ve continued developing my coding skills post-graduation, and this tool is part of that journey.
 
 ---
 
