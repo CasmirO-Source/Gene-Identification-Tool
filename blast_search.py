@@ -1,6 +1,3 @@
-# This is a script to do a BLAST search for DNA sequences
-# I first learnt about bioinformatics in my degree in biomedical science and hope to pursue it as a career. I continued my practice over studying and took a year after graduating to improve my coding skills.
-# I’m using Biopython cause it makes this easier
 
 from Bio import SeqIO # for reading fasta files
 from Bio.Blast import NCBIWWW # to connect to BLAST online
