@@ -66,7 +66,4 @@ BLAST queries may take a few minutes depending on the sequence length.
 
 NCBI BLAST
 Biopython Tutorial
-## Author
 
-Created by someone passionate about bioinformatics and learning by building.
-Feel free to fork, contribute, or ask questions!
