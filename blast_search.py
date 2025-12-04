@@ -15,7 +15,7 @@ def search_with_blast(my_dna_sequence, database="nt", search_type="blastn"):
     returns:
         a list of matches with all the details
     """
-    print("Starting BLAST search now...")
+    print("Starting BLAST search now")
     print("This might take a while cause it’s online!") # added this to let user know
     
     # doing the BLAST search
