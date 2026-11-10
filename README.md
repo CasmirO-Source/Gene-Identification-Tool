@@ -1,69 +1,37 @@
-#  DNA BLAST Search Tool (Biopython)
+# Gene Identification Tool
 
-This is a simple Python script that performs a BLAST (Basic Local Alignment Search Tool) search using a DNA sequence from a FASTA file. It uses Biopython(https://biopython.org/) to send a query to the NCBI BLAST API and then parse the results.
+A command-line Python script that takes an unknown DNA sequence, sends it to the NCBI BLAST web service and prints back the closest matches from its database. BLAST is the standard tool for working out what a sequence is by comparing it against millions of known ones.
 
----
+I first came across BLAST during my biomedical science degree. I built this afterwards to learn how to call a web service from code and turn the response into something readable.
 
-##  Project Background
+## What it does
 
-I first learnt about bioinformatics during my biomedical science degree and became fascinated with how tools like BLAST help identify genetic sequences. I’ve continued developing my coding skills post-graduation, and this tool is part of that journey.
+1. Reads a DNA sequence from a FASTA file (the standard text format for sequences).
+2. Submits it to NCBI BLAST using Biopython.
+3. Parses the XML response into a list of matches.
+4. Prints each match with its name, length, score, E-value (how likely the match is to be chance, lower is better), identical positions, gaps and where it aligns.
 
----
+If the file is missing or the request fails, it exits with a clear error message rather than a stack trace.
 
-##  What This Script Does
+## Example
 
-- Reads a DNA sequence from a `.fasta` file.
-- Submits the sequence to NCBI’s online BLAST service.
-- Retrieves and prints matching sequences, alignment scores, identity matches, and more.
-
----
-
-##  Example Files
-
-This repo includes:
-- `blast_search.py`: The main script.
-- `hippo.fasta`: Example DNA sequence for testing.
-
----
-
-##  Requirements
-
-- Python 3.x
-- Biopython
-
-Install Biopython using pip:
+`Hippo.fasta` holds a 600-letter section of the hippopotamus COX1 gene, a gene commonly used to identify species. It's a published record (PQ902075.1), which makes it a good test that the script is working.
 
 ```bash
-pip install biopython
+pip install -r requirements.txt
+python blast_search.py Hippo.fasta
 ```
 
-## How to Use
+Needs an internet connection. NCBI can take a few minutes to respond depending on load.
 
-Make sure your FASTA file (like hippo.fasta) is in the same folder as the script.
+## Limitations
 
-Run the script in your terminal:
+- Only accepts files with a single sequence
+- Results print to the screen and aren't saved
+- The database and search type are fixed in the code
 
-python blast_search.py hippo.fasta
-You’ll see BLAST results printed to your terminal, including:
+## What I'd do next
 
-Match title
-Score
-E-value
-Start/End positions of alignments
-  
- ## Notes
-
-Only one record per FASTA file is supported.
-Internet connection is required (it queries NCBI online).
-BLAST queries may take a few minutes depending on the sequence length.
-## Future Improvements
-
-1. Add support for multiple sequences in one file
-2. Export results to a text or CSV file
-3. Option to select different BLAST databases or parameters
-
-## Resources
-
-NCBI BLAST
-Biopython Tutorial
-
+- Support files with several sequences
+- Save results to CSV so they can be loaded elsewhere
+- Add command-line options for the database and search type
